@@ -14,6 +14,7 @@
 		5526DCE825CA33AF00E96E5F /* AView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5526DCE725CA33AF00E96E5F /* AView.swift */; };
 		5526DCEB25CA35C400E96E5F /* TabExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5526DCEA25CA35C400E96E5F /* TabExampleView.swift */; };
 		5526DCEE25CB9D1300E96E5F /* ResultExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5526DCED25CB9D1300E96E5F /* ResultExampleView.swift */; };
+		5526DCF125CBA33300E96E5F /* ManualPublishExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5526DCF025CBA33300E96E5F /* ManualPublishExampleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		5526DCE725CA33AF00E96E5F /* AView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AView.swift; sourceTree = "<group>"; };
 		5526DCEA25CA35C400E96E5F /* TabExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabExampleView.swift; sourceTree = "<group>"; };
 		5526DCED25CB9D1300E96E5F /* ResultExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultExampleView.swift; sourceTree = "<group>"; };
+		5526DCF025CBA33300E96E5F /* ManualPublishExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualPublishExampleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				5526DCE725CA33AF00E96E5F /* AView.swift */,
 				5526DCEA25CA35C400E96E5F /* TabExampleView.swift */,
 				5526DCED25CB9D1300E96E5F /* ResultExampleView.swift */,
+				5526DCF025CBA33300E96E5F /* ManualPublishExampleView.swift */,
 			);
 			path = HotProspects;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 				5526DCEB25CA35C400E96E5F /* TabExampleView.swift in Sources */,
 				5526DCDA25CA329400E96E5F /* ContentView.swift in Sources */,
 				5526DCD825CA329400E96E5F /* HotProspectsApp.swift in Sources */,
+				5526DCF125CBA33300E96E5F /* ManualPublishExampleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
