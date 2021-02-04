@@ -25,10 +25,33 @@ class DelayedUpdater: ObservableObject {
     }
 }
 
+
+class DelayedDecrementer: ObservableObject {
+    var startingValue = 10 {
+        willSet {
+            objectWillChange.send()
+        }
+    }
+    
+    init(_ start: Int) {
+        self.startingValue = start
+        
+        for i in 0...start {
+            DispatchQueue.main.asyncAfter(deadline: .now() + Double(i)) {
+                self.startingValue -= 1
+            }
+        }
+    }
+}
+
 struct ManualPublishExampleView: View {
     @ObservedObject var updater = DelayedUpdater()
+    @ObservedObject var decrimenter = DelayedDecrementer(30)
     var body: some View {
-        Text("Updater value: \(updater.value)")
+        VStack {
+            Text("Incrememter value: \(updater.value)")
+            Text("Decrementer value: \(decrimenter.startingValue)")
+        }
     }
 }
 
