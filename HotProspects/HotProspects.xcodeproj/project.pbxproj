@@ -22,6 +22,7 @@
 		55D4544825CCE0EC0043370C /* SamplePackageConsumerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D4544725CCE0EC0043370C /* SamplePackageConsumerView.swift */; };
 		55D4544B25CE2A0A0043370C /* ProspectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D4544A25CE2A0A0043370C /* ProspectsView.swift */; };
 		55D4544E25CE2A1D0043370C /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D4544D25CE2A1D0043370C /* MeView.swift */; };
+		55D4545125CE2D680043370C /* Prospects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D4545025CE2D680043370C /* Prospects.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		55D4544725CCE0EC0043370C /* SamplePackageConsumerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplePackageConsumerView.swift; sourceTree = "<group>"; };
 		55D4544A25CE2A0A0043370C /* ProspectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProspectsView.swift; sourceTree = "<group>"; };
 		55D4544D25CE2A1D0043370C /* MeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
+		55D4545025CE2D680043370C /* Prospects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospects.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				5526DCE725CA33AF00E96E5F /* AView.swift */,
 				5526DCEA25CA35C400E96E5F /* TabExampleView.swift */,
 				55D4544A25CE2A0A0043370C /* ProspectsView.swift */,
+				55D4545025CE2D680043370C /* Prospects.swift */,
 				55D4544D25CE2A1D0043370C /* MeView.swift */,
 				5526DCED25CB9D1300E96E5F /* ResultExampleView.swift */,
 				5526DCF025CBA33300E96E5F /* ManualPublishExampleView.swift */,
@@ -186,6 +189,7 @@
 				55D4544125CCD4860043370C /* LocalNotificationsView.swift in Sources */,
 				5526DCDA25CA329400E96E5F /* ContentView.swift in Sources */,
 				5526DCD825CA329400E96E5F /* HotProspectsApp.swift in Sources */,
+				55D4545125CE2D680043370C /* Prospects.swift in Sources */,
 				55D4544B25CE2A0A0043370C /* ProspectsView.swift in Sources */,
 				5526DCF125CBA33300E96E5F /* ManualPublishExampleView.swift in Sources */,
 			);
