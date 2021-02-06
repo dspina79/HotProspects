@@ -22,6 +22,7 @@ struct ContextMenuExampleView: View {
                         self.backgroundColor = Color.red
                     }) {
                         Text("Red")
+                            
                     }
                     Button(action: {
                         self.backgroundColor = Color.green

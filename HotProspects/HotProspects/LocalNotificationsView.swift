@@ -32,6 +32,19 @@ struct LocalNotificationsView: View {
                 
                 UNUserNotificationCenter.current().add(request)
             }
+            
+            Button("Push Additional Notification") {
+                let content = UNMutableNotificationContent()
+                content.title = "Another Notification"
+                content.subtitle = "There is another meaning for other groups of people, but did you leave the iron on?"
+                content.sound = .default
+                content.badge = 1
+                
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+                let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                
+                UNUserNotificationCenter.current().add(request)
+            }
         }
     }
 }
