@@ -24,6 +24,7 @@
 		55D4544E25CE2A1D0043370C /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D4544D25CE2A1D0043370C /* MeView.swift */; };
 		55D4545125CE2D680043370C /* Prospects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D4545025CE2D680043370C /* Prospects.swift */; };
 		55D4545525CF49750043370C /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 55D4545425CF49750043370C /* CodeScanner */; };
+		55D4545B25D0D15A0043370C /* PeopleMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D4545A25D0D15A0043370C /* PeopleMaker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		55D4544A25CE2A0A0043370C /* ProspectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProspectsView.swift; sourceTree = "<group>"; };
 		55D4544D25CE2A1D0043370C /* MeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
 		55D4545025CE2D680043370C /* Prospects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospects.swift; sourceTree = "<group>"; };
+		55D4545A25D0D15A0043370C /* PeopleMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleMaker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				55D4543D25CCD0980043370C /* ContextMenuExampleView.swift */,
 				55D4544025CCD4860043370C /* LocalNotificationsView.swift */,
 				55D4544725CCE0EC0043370C /* SamplePackageConsumerView.swift */,
+				55D4545A25D0D15A0043370C /* PeopleMaker.swift */,
 			);
 			path = HotProspects;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				5526DCEB25CA35C400E96E5F /* TabExampleView.swift in Sources */,
 				55D4544125CCD4860043370C /* LocalNotificationsView.swift in Sources */,
 				5526DCDA25CA329400E96E5F /* ContentView.swift in Sources */,
+				55D4545B25D0D15A0043370C /* PeopleMaker.swift in Sources */,
 				5526DCD825CA329400E96E5F /* HotProspectsApp.swift in Sources */,
 				55D4545125CE2D680043370C /* Prospects.swift in Sources */,
 				55D4544B25CE2A0A0043370C /* ProspectsView.swift in Sources */,

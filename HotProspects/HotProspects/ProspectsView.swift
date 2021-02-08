@@ -71,7 +71,7 @@ struct ProspectsView: View {
                     Text("Scan")
                 })
             .sheet(isPresented: $isShowingScanner) {
-                CodeScannerView(codeTypes: [.qr], simulatedData: "Dean Anips\ndean@nowhere.net", completion: handleScan)
+                CodeScannerView(codeTypes: [.qr], simulatedData: PeopleMaker.getRandomSimulatedData(), completion: handleScan)
             }
         }
     }
