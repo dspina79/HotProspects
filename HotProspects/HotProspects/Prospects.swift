@@ -22,14 +22,21 @@ class Prospects: ObservableObject {
     @Published var sortByDate = false
     
     static let SAVEKEY = "SavedData"
+    static let DOCKEY = "HotProspects.json"
     
     init() {
-        if let data = UserDefaults.standard.data(forKey: Prospects.SAVEKEY) {
-            if let decoded = try? JSONDecoder().decode([Prospect].self, from: data) {
+        let url = Self.getDocumentsDirectory().appendingPathComponent(Self.DOCKEY)
+        do {
+            let json = try Data(contentsOf: url)
+            if let decoded = try? JSONDecoder().decode([Prospect].self, from: json) {
                 self.people = decoded
                 return
             }
+            
+        } catch {
+            print("Could not load data.")
         }
+        
         self.people = []
         
     }
@@ -59,6 +66,20 @@ class Prospects: ObservableObject {
         lhs.name < rhs.name
     }
     
+    static func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
+    func saveToDocument(json: String) {
+        let url = Self.getDocumentsDirectory().appendingPathComponent(Self.DOCKEY)
+        do {
+            try json.write(to: url, atomically: true, encoding: .utf8)
+        } catch {
+            print("There was an error in saving the documentation.")
+        }
+    }
+    
     func add(_ prospect: Prospect) {
         self.people.append(prospect)
         self.saveData()
@@ -66,7 +87,9 @@ class Prospects: ObservableObject {
         
     func saveData() {
         if let encoded = try? JSONEncoder().encode(self.people) {
-            UserDefaults.standard.setValue(encoded, forKey: Prospects.SAVEKEY)
+            //UserDefaults.standard.setValue(encoded, forKey: Prospects.SAVEKEY)
+            let json = String(decoding: encoded, as: UTF8.self)
+            saveToDocument(json: json)
         }
     }
     
