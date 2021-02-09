@@ -15,6 +15,8 @@ struct ProspectsView: View {
     }
     @EnvironmentObject var prospects: Prospects
     @State private var isShowingScanner = false
+    @State private var isShowingSheet = false
+    
     var isShowingIcons = false
     
     let filter: FilterType
@@ -33,11 +35,11 @@ struct ProspectsView: View {
     var filteredProspects: [Prospect] {
         switch filter {
         case .none:
-            return prospects.people
+            return prospects.prospectPeople
         case .contacted:
-            return prospects.people.filter {$0.isContacted}
+            return prospects.prospectPeople.filter {$0.isContacted}
         case .uncontacted:
-            return prospects.people.filter {!$0.isContacted}
+            return prospects.prospectPeople.filter {!$0.isContacted}
         }
     }
     
@@ -70,14 +72,29 @@ struct ProspectsView: View {
                 }
             }
             .navigationBarTitle(title)
-                .navigationBarItems(trailing: Button(action: {
+            .navigationBarItems(trailing: HStack{
+                Button(action: {
                     self.isShowingScanner = true
                 }) {
                     Image(systemName: "qrcode.viewfinder")
                     Text("Scan")
-                })
+                }
+                Button(action: {
+                self.isShowingSheet = true
+                }) {
+                    Image(systemName: "arrow.up.arrow.down.square.fill")
+                    Text("Sort")
+                }
+            })
             .sheet(isPresented: $isShowingScanner) {
                 CodeScannerView(codeTypes: [.qr], simulatedData: PeopleMaker.getRandomSimulatedData(), completion: handleScan)
+            }
+            .actionSheet(isPresented: $isShowingSheet) {
+                ActionSheet(title: Text("Sort Order"), message: Text("Select sort order for prospects."), buttons: [
+                    .default(Text("By Name")){self.prospects.sortByDate = false},
+                    .default(Text("By Recent")) { self.prospects.sortByDate = true},
+                    .cancel()
+                    ])
             }
         }
     }

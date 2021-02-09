@@ -11,6 +11,7 @@ class Prospect: Identifiable, Codable {
     var id = UUID()
     var name = "Anonymous"
     var emailAddress = ""
+    var dateAdded = Date()
     fileprivate(set) var isContacted = false
 }
 
@@ -18,6 +19,8 @@ class Prospect: Identifiable, Codable {
 class Prospects: ObservableObject {
     // people are locked down so they can't run append or any other modifiers
     @Published private(set) var people: [Prospect]
+    @Published var sortByDate = false
+    
     static let SAVEKEY = "SavedData"
     
     init() {
@@ -29,6 +32,31 @@ class Prospects: ObservableObject {
         }
         self.people = []
         
+    }
+    
+    var prospectPeople: [Prospect] {
+        if self.sortByDate {
+            return peopleByRecent
+        }
+        
+        return peopleByName
+    }
+    
+    var peopleByName: [Prospect] {
+        return self.people.sorted(by: compareByName)
+    }
+    
+    var peopleByRecent: [Prospect] {
+        return self.people.sorted(by: compareByDate)
+        
+    }
+    
+    func compareByDate(lhs: Prospect, rhs: Prospect) -> Bool {
+        lhs.dateAdded < rhs.dateAdded
+    }
+    
+    func compareByName(lhs: Prospect, rhs: Prospect) -> Bool {
+        lhs.name < rhs.name
     }
     
     func add(_ prospect: Prospect) {
