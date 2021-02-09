@@ -15,6 +15,7 @@ struct ProspectsView: View {
     }
     @EnvironmentObject var prospects: Prospects
     @State private var isShowingScanner = false
+    var isShowingIcons = false
     
     let filter: FilterType
     
@@ -45,8 +46,13 @@ struct ProspectsView: View {
             List {
                 ForEach(filteredProspects) { prospect in
                     VStack(alignment: .leading) {
-                        Text(prospect.name)
-                            .font(.headline)
+                        HStack {
+                            Text(prospect.name)
+                                .font(.headline)
+                            if self.isShowingIcons && prospect.isContacted {
+                                Image(systemName: "person.crop.circle.badge.checkmark")
+                            }
+                        }
                         Text(prospect.emailAddress)
                             .foregroundColor(.secondary)
                     }
